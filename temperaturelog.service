@@ -1,0 +1,11 @@
+#/etc/systemd/system/
+[Unit]
+Description=Temperaturelog
+
+[Service]
+ExecStart=/bin/sh -c '/usr/bin/stdbuf -oL getTemp >> /home/HOME/Dropbox/Public/temperature/datafile.csv'
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
